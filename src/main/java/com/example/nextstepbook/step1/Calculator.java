@@ -10,6 +10,8 @@ package com.example.nextstepbook.step1;
     문자열 계산기에 음수 전달시 RuntimeException 예외 처리
  */
 
+import java.util.Arrays;
+
 public class Calculator {
 
     String inputStr;
@@ -23,6 +25,7 @@ public class Calculator {
     * @return : 커스텀 구분자, 없으면 빈값
     **/
     public String separatorTo() {
+        validation();
         if (inputStr.startsWith("/")) {
             return inputStr.substring(2, 3);
         }
@@ -32,9 +35,9 @@ public class Calculator {
 
     public String[] division(String separator) {
         if (separator.isBlank()) {
-            return separatorTo().split(",|:");
+            return inputStr.split(",|:");
         }
-        return inputStr.split(separator);
+        return inputStr.substring(4).split(separator);
     }
 
     public int allSum(String[] inputStrings) {
@@ -46,7 +49,7 @@ public class Calculator {
         return sum;
     }
 
-    public void validation(String inputStr) {
+    public void validation() {
         String [] inputStrs = inputStr.split("-");
         if (inputStrs.length == 2) {
             throw new RuntimeException("음수가 있습니다.");
