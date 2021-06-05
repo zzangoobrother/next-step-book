@@ -53,6 +53,7 @@ class CalculatorTest {
         });
     }
 
+    
     @Test
     void 커스텀구분자_합구하기() {
         String separator = customSeparatorCalculator.separatorTo();
