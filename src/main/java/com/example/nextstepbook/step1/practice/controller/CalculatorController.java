@@ -1,9 +1,12 @@
-package com.example.nextstepbook.step1.controller;
+package com.example.nextstepbook.step1.practice.controller;
 
-import com.example.nextstepbook.step1.Calculator;
+import com.example.nextstepbook.step1.practice.Calculator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/step1")
