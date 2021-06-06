@@ -37,7 +37,7 @@ public class Calculator {
         if (separator.isBlank()) {
             return inputStr.split(",|:");
         }
-        return inputStr.substring(4).split(separator);
+        return inputStr.substring(5).split(separator);
     }
 
     public int allSum(String[] inputStrings) {

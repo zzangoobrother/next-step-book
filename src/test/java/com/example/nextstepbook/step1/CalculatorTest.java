@@ -13,7 +13,7 @@ class CalculatorTest {
 
     @BeforeEach
     void init() {
-        customSeparatorCalculator = new Calculator("//;\n1;2;3");
+        customSeparatorCalculator = new Calculator("//;/\n1;2;3");
         noCustomSeparatorCalculator = new Calculator("1,2:3");
     }
 
@@ -53,7 +53,6 @@ class CalculatorTest {
         });
     }
 
-    
     @Test
     void 커스텀구분자_합구하기() {
         String separator = customSeparatorCalculator.separatorTo();

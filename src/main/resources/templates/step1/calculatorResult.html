@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>문자열 계산 결과</h2>
+    </div>
+
+    <h2 th:if="${param.status}" th:text="'계산 완료'"></h2>
+
+    <div>
+        <label for="sum">계산 결과</label>
+        <input type="text" id="sum" name="sum" class="form-control"
+               value="1" th:value="${sum}" readonly>
+    </div>
+
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='/index.html'" type="button">목록으로</button>
+<!--                    th:onclick="|location.href='@{/basic/items/{itemId}/edit(itemId=${item.id})}'|"-->
+
+        </div>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
