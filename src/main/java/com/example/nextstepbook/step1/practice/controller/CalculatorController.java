@@ -1,6 +1,7 @@
 package com.example.nextstepbook.step1.practice.controller;
 
 import com.example.nextstepbook.step1.practice.Calculator;
+import com.example.nextstepbook.step1.practice.service.CalculatorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,10 +20,8 @@ public class CalculatorController {
 
     @PostMapping("/calculator")
     public String calculatorResult(@RequestParam String inputStr, Model model) {
-        Calculator calculator = new Calculator(inputStr);
-        String separator = calculator.separatorTo();
-        String[] divisions = calculator.division(separator);
-        int sum = calculator.allSum(divisions);
+        CalculatorService calculatorService = new CalculatorService();
+        int sum = calculatorService.calculatorResult(inputStr);
 
         model.addAttribute("sum", sum);
         return "step1/calculatorResult";
