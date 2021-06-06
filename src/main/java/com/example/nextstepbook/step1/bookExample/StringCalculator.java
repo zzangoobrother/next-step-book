@@ -3,12 +3,18 @@ package com.example.nextstepbook.step1.bookExample;
 public class StringCalculator {
 
     public int add(String text) {
-        if (text == null || text.isBlank()) {
+        if (isBlank(text)) {
             return 0;
         }
+        return sum(toInts(split(text)));
+    }
 
-        String[] values = text.split(",");
-        return sum(toInts(values));
+    private boolean isBlank(String text) {
+        return text == null || text.isBlank();
+    }
+
+    private String[] split(String text) {
+        return text.split(",");
     }
 
     private int[] toInts(String[] values) {
