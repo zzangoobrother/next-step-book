@@ -30,4 +30,20 @@ class StringCalculatorTest {
         assertEquals(3, stringCalculator.add("1,2"));
     }
 
+    @Test
+    void add_쉼표_또는_콜론_구분자() throws Exception {
+        assertEquals(6, stringCalculator.add("1,2:3"));
+    }
+
+    @Test
+    void add_custom_구분자() throws Exception {
+        assertEquals(6, stringCalculator.add("//;\n1;2;3"));
+    }
+
+    @Test
+    void add_negative() throws Exception {
+        assertThrows(RuntimeException.class, () -> {
+            stringCalculator.add("-1,2,3");
+        });
+    }
 }
